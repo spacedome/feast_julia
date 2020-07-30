@@ -133,9 +133,6 @@ feast:	$(OBJECTS)  $(OBJECTS_sparse) $(OBJECTS_banded) $(OBJECTS_dense)
 #ar r $(NAME_banded) $(OBJECTS_banded)
 #ar r $(NAME_sparse) $(OBJECTS_sparse)
 	$(F90) $(LDFLAGS) -lgfortran -shared $(OBJECTS_sparse) $(OBJECTS_banded) $(OBJECTS_dense) $(OBJECTS) $(BLAS) -o $(SNAME)
-	@if test -d ../lib/$(ARCH); then \
-	echo "directory $(ARCH) already exists"; \
-	else echo "create directory $(ARCH)" && mkdir ../lib/$(ARCH); fi;
 	#=mv *.a ../lib/
 	mv *.so ../lib/
 	rm -f $(OBJECTS) $(OBJECTS_sparse) $(OBJECTS_banded) $(OBJECTS_dense)
