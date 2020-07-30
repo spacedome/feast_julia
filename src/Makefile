@@ -133,8 +133,6 @@ feast:	$(OBJECTS)  $(OBJECTS_sparse) $(OBJECTS_banded) $(OBJECTS_dense)
 #ar r $(NAME_banded) $(OBJECTS_banded)
 #ar r $(NAME_sparse) $(OBJECTS_sparse)
 	$(F90) $(LDFLAGS) -lgfortran -shared $(OBJECTS_sparse) $(OBJECTS_banded) $(OBJECTS_dense) $(OBJECTS) $(BLAS) -o $(SNAME)
-	#=mv *.a ../lib/
-	mv *.so ../lib/
 	rm -f $(OBJECTS) $(OBJECTS_sparse) $(OBJECTS_banded) $(OBJECTS_dense)
 
 pfeast: $(OBJECTS_p) $(OBJECTS_psparse) $(OBJECTS_pbanded) $(OBJECTS_pdense)
